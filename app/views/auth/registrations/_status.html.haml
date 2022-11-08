@@ -21,6 +21,9 @@
     %span.warning-hint= t('user_mailer.warning.explanation.silence')
   - else
     %span.positive-hint= t('auth.status.functional')
+%p.hint
+  - if !@user.approved?
+    %span.warning-hint= t('auth.status.pending')
 
 = render partial: 'account_warning', collection: @strikes
 
